@@ -1,34 +1,44 @@
-# DockerForMerge
-This repo includes the code shown for my internal Blog post on utilizing Docker when merging old solutions
-
+# BC Starter Script
 This Repo is made to run with Visual Studio Code or pure Powershell
-
-All Powershellscripts are accessable via Tasks that support you a bit on using the scripts.
 
 Please be aware it is an example and you have to adjust Images and things like that to fit your solution...
 
-You most likly have to run VSC as Administrator...
+You most likely have to run VSC as Administrator...
 
-## DVD.ps1
-Task to run: Create based on DVD
+There is a task ready under Terminal -> Run Task that will install you a v16 BC latest Version
 
-This option is used for e.g. 2013R2 you need to have the DVD ready mounted or unzipped and you have the needed dotfx3 in place. A licence is also needed.
+Since we are using DOcker make sure you have everything in place:
+- HyperV
+- Windows Container
+- Docker for Desktop in Windows Mode
+
+## BC16Latest.ps1
+Task to run: Create BC v16 - Latest!
+
+You will be asked for you AD User password
+
 It will keep navcontainer up2date.
 
-## 18CU29.ps1
-Task to run: Create 2018CU29!
+## in case of emergancy 
+we have seen so far:
+- policy issues with powershell: run in a powershell the following command:
+    ```
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+    ```
+  
+  !! WARNING: read carefully the instructions about the implication!
+  
+  If you want to be on the save side run: 
+  
+    ```
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ```
+  
+  after you are done with the Container startup
 
-This option only needs a license file. 
-It will keep navcontainer up2date.
-
-## Install-NavContainerHelper.ps1
-Installs or Updates NavContainerhelper on it's own
-
-## Get-NavContainerImages.ps1
-Task to run: NAV Docker Images!
-
-Allows you to retive all the different Versions of NAV/BC Images our there made available from MS (2015++)
-You can apply a Filter for a certain version, or CU or language...
-
-
-# That's all Folks! 
+- Problems with Username and Password:
+  - make sure you are connected to the Hansen network (via Checkpoint VPN if @home or just be On-Site connected to the internal network)
+    - emergancy exit: change within the powershell script: BC16Latest.ps1 the parameter -auth from Windows to UserPassword
+      - if you do: the Password must be at least 8 chards long, at least 1 number, 1 Uppercase and 1 Special Char (MS SQL default rules)
+  
+# That's all Folks!
