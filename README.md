@@ -7,7 +7,7 @@ You most likely have to run VSC as Administrator...
 
 There is a task ready under Terminal -> Run Task that will install you a v16 BC latest Version
 
-Since we are using DOcker make sure you have everything in place:
+Since we are using Docker make sure you have everything in place:
 - HyperV
 - Windows Container
 - Docker for Desktop in Windows Mode
@@ -17,7 +17,7 @@ Task to run: Create BC v16 - Latest!
 
 You will be asked for you AD User password
 
-It will keep navcontainer up2date.
+It will remove navcontainerhelper and instead setup bcContainerHelper.
 
 
 # That's all Folks!
