@@ -19,5 +19,13 @@ You will be asked for you AD User password
 
 It will remove navcontainerhelper and instead setup bcContainerHelper.
 
+## BC17Latest.ps1
+Task to run: Create BC Insider v17 - Latest!
+
+You will be asked for you AD User password
+You have to provide our sasToken for the insider Program
+
+It will remove navcontainerhelper and instead setup bcContainerHelper.
+
 
 # That's all Folks!
