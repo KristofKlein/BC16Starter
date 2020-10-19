@@ -47,4 +47,29 @@ It will remove navcontainerhelper and instead setup bcContainerHelper.
 - if this step fails you may need to uninstall the module yourself manually
 - it can also be that you need to restart VS Code ...
 
+## in case of emergancy 
+we have seen so far:
+- policy issues with powershell: run in a powershell the following command:
+    ```
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+    ```
+  
+  !! WARNING: read carefully the instructions about the implication!
+  
+  If you want to be on the save side run: 
+  
+    ```
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ```
+  
+  after you are done with the Container startup
+
+- Problems with Username and Password:
+  - make sure you are connected to the Hansen network (via Checkpoint VPN if @home or just be On-Site connected to the internal network)
+   - emergancy exit: change within the powershell script: BC16Latest.ps1 the parameter -auth from Windows to UserPassword
+    - if you do: the Password must be at least 8 chards long, at least 1 number, 1 Uppercase and 1 Special Char (MS SQL default rules)
+    
+- if you download the zip from here it sometimes happens that MS blocks the Powershell scripts. If it does: rightclick, Properties and "unblock". Has to be done for both ps1 files
+
+  
 # That's all Folks!
