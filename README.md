@@ -13,19 +13,38 @@ Since we are using Docker make sure you have everything in place:
 - Docker for Desktop in Windows Mode
 
 ## BC16Latest.ps1
-Task to run: Create BC v16 - Latest!
+Task to run: Create **BC** v16 - Latest!
 
 You will be asked for you AD User password
 
 It will remove navcontainerhelper and instead setup bcContainerHelper.
+- if this step fails you may need to uninstall the module yourself manually
+- it can also be that you need to restart VS Code ...
 
 ## BC17Latest.ps1
-Task to run: Create BC Insider v17 - Latest!
+Task to run: Create **BC** v17 - Latest!
+
+You will be asked for you AD User password
+
+It will remove navcontainerhelper and instead setup bcContainerHelper.
+- if this step fails you may need to uninstall the module yourself manually
+- it can also be that you need to restart VS Code ...
+
+## BC18Insider.ps1
+Task to run: Create **BC** v18 - **Insider**!
 
 You will be asked for you AD User password
 You have to provide our sasToken for the insider Program
 
 It will remove navcontainerhelper and instead setup bcContainerHelper.
 
+## NAVXLatest.ps1
+Task to run: Create **NAV** on artifacts!
+
+You will be asked for you AD User password
+
+It will remove navcontainerhelper and instead setup bcContainerHelper.
+- if this step fails you may need to uninstall the module yourself manually
+- it can also be that you need to restart VS Code ...
 
 # That's all Folks!

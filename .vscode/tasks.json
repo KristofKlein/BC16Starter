@@ -4,15 +4,31 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Create latest BC v16 on artifacts!",
+            "label": "Create BC v16 - Latest!",
             "type": "shell",
             "command": "${workspaceFolder}\\Powershell\\BC16Latest.ps1",
             "problemMatcher": [],
         },
         {
-            "label": "Create latest BC Insider v17 on artifacts!",
+            "label": "Create BC v17 - Latest!",
             "type": "shell",
             "command": "${workspaceFolder}\\Powershell\\BC17Latest.ps1",
+            "problemMatcher": [],
+        },
+        {
+            "label": "Create NAV on artifacts!",
+            "type": "shell",
+            "command": "${workspaceFolder}\\Powershell\\NAVXLatest.ps1",
+            "args": [
+                "${input:NavVersion}",
+                "${input:CUVersion}"
+            ],
+            "problemMatcher": [],
+        },
+        {
+            "label": "Create BC v18 - Insider!",
+            "type": "shell",
+            "command": "${workspaceFolder}\\Powershell\\BC18Insider.ps1",
             "args": [
                 "${input:SasToken}"
             ],
@@ -25,6 +41,21 @@
             "id": "SasToken",
             "description": "Provide Sas Token",
             "password": true
+        },
+        {
+            "type": "pickString",
+            "id": "NavVersion",
+            "description": "NAV Version",
+            "options": [
+                "2017",
+                "2018"
+            ],
+            "default": "2018"
+        },
+        {
+            "type": "promptString",
+            "id": "CUVersion",
+            "description": "Provide the plain CU number"
         }
     ]
 }
